@@ -1,5 +1,5 @@
 # Marching Cubes Algorithm with Three.js
-![Marching cubes](./static/imgs/Capture.PNG)
+![Marching cubes](./static/imgs/Capture2.PNG)
 
 
 
@@ -20,5 +20,5 @@ The resulting mesh uses indexed verticies to improve memory usage
 ### Chunked Loading
 The field is dynamically broked down into tiles. Allows for LOD implementation in the future
 
-![Marching cubes](./static/imgs/Capture2.PNG)
+
 
