@@ -799,69 +799,21 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
      */
     #density(x,y,z, options)
     {   
-        // console.log(options)
-        // if(!options){options={}}
-        // if(!options.octaves){options.octaves=3}
-        // if(!options.lacunarity){options.lacunarity=2.0}
-        // if(!options.gain){options.gain=0.5}
-        // if(!options.amplitude){options.amplitude=5}
-        // if(!options.frequency){options.frequency=0.001}
-        // warp = noiseVol2.Sample( TrilinearRepeat, ws*0.004 ).xyz; 
         let density=y
-
-        // const warp =this.noise3D(x*0.004,y*0.004,z*0.004)
-        // x += warp * 8;
-        // y += warp * 8;
-        // z += warp * 8;
-
-
-        
-        //FIXME; create a dedicated function for this
-        // density+= this.noise3D(x*4.03,y*4.03,z*4.03)*0.25
-        // density+= this.noise3D(x*1.96,y*1.96,z*1.96)*0.5
-        // density+= this.noise3D(x*1.01,y*1.01,z*1.01)*1
-        //1
-        // density+= this.noise3D(x*0.04,y*0.04,z*0.04)*2
-        // density+= this.noise3D(x*0.1,y*0.1,z*0.1)*2
-        // density+= this.noise3D(x*0.01,y*0.01,z*0.01)*5
-       
         const  octaves = options.octaves;
         let lacunarity = options.lacunarity;
         let gain =options.gain;
-        //
-        // Initial values
         let amplitude = options.amplitude;
         let frequency = options.frequency;
-        //
-        // Loop of octaves
-        // console.log('---------------------')
+
 
         for (let i = 0; i < octaves; i++) {
             density += amplitude * this.noise3D(x*frequency,y*frequency,z*frequency);
             frequency *= lacunarity;
             amplitude *= gain;
-            // console.log(frequency,amplitude,density)
+
         }
 
-        //2
-        // density+= this.noise3D(x*0.2,y*0.2,z*0.2)*2
-        // density+= this.noise3D(x*0.8,y*0.8,z*0.8)*0.2
-
-        // density+= this.noise3D(x*0.1,y*0.1,z*0.1)*14
-        // density+= this.noise3D(x*0.01,y*0.01,z*0.01)*7
-
-        //3
-        // density+= this.noise3D(x*1,y*0.5,z*1)*3
-        // density+= this.noise3D(x*0.1,y*0.1,z*0.1)*7
-
-
-
-        // if(y<=-2)
-        //     {
-        //         density=1
-        //     }
-        // density+= this.noise.perlin3(x,y,z)
-        // this.perform.counter('density')
         density= Math.round(density*1000)/1000
         return density
     }
@@ -881,6 +833,7 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
             }
         )
     }
+    
     /**
      * debug method. draws a box based on the max,min and height 
      * 
@@ -964,8 +917,6 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
         this.scene.add(mesh)
     }
 
-    
-
     /**
      * sets up the debug view if its wanted
      * 
@@ -974,7 +925,7 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
      */
     showDebug(scene,gui)
     {
-        this.debug.showChunks=true
+        this.debug.showChunks=false
         this.debug.showPoints=false
         this.debug.showMesh=true
 
@@ -1130,10 +1081,4 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
             })
     }
 
-    // #debugDensity()
-    // {
-
-
-        
-    // }
  }
