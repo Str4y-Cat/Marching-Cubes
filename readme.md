@@ -20,5 +20,14 @@ The resulting mesh uses indexed verticies to improve memory usage
 ### Chunked Loading
 The field is dynamically broked down into tiles. Allows for LOD implementation in the future
 
+## Examples
+
+![Marching cubes](./static/imgs/Capture3.PNG)
+### Cell Visualization
+![Marching cubes](./static/imgs/Capture4.PNG)
+### Chunk Visualization
+![Marching cubes](./static/imgs/Capture5.PNG)
+
+
 
 
