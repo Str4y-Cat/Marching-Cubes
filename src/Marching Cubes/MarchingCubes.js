@@ -833,7 +833,7 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
             }
         )
     }
-    
+
     /**
      * debug method. draws a box based on the max,min and height 
      * 
@@ -927,15 +927,15 @@ import fragmentShader from '../shaders/mountain/fragment.glsl'
     {
         this.debug.showChunks=false
         this.debug.showPoints=false
-        this.debug.showMesh=true
+        // this.debug.showMesh=true
 
         const folder= gui.addFolder('Marching Cubes')
 
-        this.debug.tileDivisions.forEach(tileMesh=>
-            {
-                scene.add(tileMesh)
-            }
-        )
+        // this.debug.tileDivisions.forEach(tileMesh=>
+        //     {
+        //         scene.add(tileMesh)
+        //     }
+        // )
 
         folder.add(this.debug,'showPoints').name('Show Cells').onChange(bool=>
             {

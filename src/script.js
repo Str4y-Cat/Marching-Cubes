@@ -63,7 +63,7 @@ window.addEventListener('resize',()=>
  */
 
 const camera= new THREE.PerspectiveCamera(75,sizes.width/sizes.height, 0.1 , 100)
-camera.position.set(2,5,5)
+camera.position.set(10,3,9)
 camera.lookAt(new THREE.Vector3(0,0,0))
 scene.add(camera)
 //#endregion
