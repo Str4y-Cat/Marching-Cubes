@@ -4,7 +4,9 @@
 
 
 ## Overview
-This is an implementation of the marching cubes algorithm using JavaScript and Three.js, aiming to create 3D surfaces from volumetric data. The marching cubes algorithm converts 3D scalar data into detailed surfaces, making it ideal for visualizing complex data like medical scans or terrain models.
+This is an implementation of the marching cubes algorithm using JavaScript and Three.js, aiming to create 3D surfaces from volumetric data. The marching cubes algorithm converts 3D scalar data into detailed surfaces, making it ideal for visualizing complex data like medical scans or terrain models. 
+
+This implementation is based on the article in [GPU Gems](https://developer.nvidia.com/gpugems/gpugems3/part-i-geometry/chapter-1-generating-complex-procedural-terrains-using-gpu)
 
 ## Features
 
